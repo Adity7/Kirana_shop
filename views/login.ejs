@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/logo-removebg-preview.png" />
+    <title>VIRAT - Login</title>
+    <link href="/stylesheets/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        header h1 {
+            font-size: 55px;
+            font-weight: 600;
+            color: rgb(182 18 18);
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        html {
+            background-image: url("../img/background.jpg");
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        a {
+            color: #c40000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #200000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .body {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh; /* Adjusted to leave space for the header */
+            margin-top: 50px; /* Add some top margin */
+        }
+
+        .screen {
+            background: linear-gradient(90deg, #19193f, #000000);
+            position: relative;
+            height: 600px;
+            width: 360px;
+            box-shadow: 0px 0px 24px #000000;
+        }
+
+        .screen__content {
+            z-index: 1;
+            position: relative;
+            height: 100%;
+        }
+
+        .screen__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+        }
+
+        .screen__background__shape {
+            transform: rotate(45deg);
+            position: absolute;
+        }
+
+        .screen__background__shape1 {
+            height: 520px;
+            width: 520px;
+            background: rgb(255, 255, 255);
+            top: -50px;
+            right: 120px;
+            border-radius: 0 72px 0 0;
+        }
+
+        .screen__background__shape2 {
+            height: 220px;
+            width: 220px;
+            background: #070711;
+            top: -172px;
+            right: 0;
+            border-radius: 32px;
+        }
+
+        .screen__background__shape3 {
+            height: 540px;
+            width: 190px;
+            background: linear-gradient(270deg, #c40000, #c40000);
+            top: -24px;
+            right: 0;
+            border-radius: 32px;
+        }
+
+        .screen__background__shape4 {
+            height: 400px;
+            width: 200px;
+            background: #c40000;
+            top: 420px;
+            right: 50px;
+            border-radius: 60px;
+        }
+
+        .login {
+            width: 320px;
+            padding: 30px;
+            padding-top: 50px; /* Adjusted padding to make space for the header */
+        }
+
+        .login__field {
+            padding: 20px 0px;
+            position: relative;
+        }
+
+        .login__icon {
+            position: absolute;
+            top: 30px;
+            color: #c40000;
+        }
+
+        .login__input {
+            border: none;
+            border-bottom: 2px solid #D1D1D4;
+            background: none;
+            padding: 10px;
+            padding-left: 24px;
+            font-weight: 700;
+            width: 75%;
+            transition: .2s;
+        }
+
+        .login__input:active,
+        .login__input:focus,
+        .login__input:hover {
+            outline: none;
+            border-bottom-color: #c40000;
+        }
+
+        .login__submit {
+            background: #fff;
+            font-size: 14px;
+            margin-top: 30px;
+            padding-top: 5%;
+            padding-right: 30%;
+            padding-left: 30%;
+            padding-bottom: 5%;
+            border-radius: 26px;
+            border: 1px solid #D4D3E8;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: #c40000;
+            box-shadow: 0px 2px 2px #c40000;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .login__submit:active,
+        .login__submit:focus,
+        .login__submit:hover {
+            border-color: #c40000;
+            outline: none;
+        }
+
+        .button__icon {
+            font-size: 24px;
+            margin-left: auto;
+            color: #c40000;
+        }
+
+        .social-login {
+            position: absolute;
+            height: 140px;
+            width: 160px;
+            text-align: center;
+            bottom: 0px;
+            right: 0px;
+            color: #fff;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-login__icon {
+            padding: 20px 10px;
+            color: #fff;
+            text-decoration: none;
+            text-shadow: 0px 0px 8px #c40000;
+        }
+
+        .social-login__icon:hover {
+            transform: scale(1.5);
+        }
+
+        #player_watch {
+            height: 750px;
+            width: 1050px;
+            margin: 0px;
+            padding: 0px;
+            border: none;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background-color: #f8f9fa; /* Light background for header */
+            padding: 10px 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img {
+            height: 2em;
+            margin-right: 10px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-actions a {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <a class="navbar-brand" href="/">
+                        <div class="header-logo">
+                            <img src="../img/logo-removebg-preview.png" alt="logo">
+                            <span>IRAT</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-actions">
+                    <a class="btn btn-primary me-2" href="https://virat-4cfd.onrender.com">Watch Together</a>
+                    <a href="/signup" class="btn btn-primary">Sign Up Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <form class="login" action="/users/login" method="POST">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" name="email" placeholder="Email">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="password" class="login__input" name="password" placeholder="Password">
+                    </div>
+                    <div>
+                        <button class="button login__submit ">Log In Now</button>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </div>
+                </form>
+            </div>
+            <div class="screen__background ">
+                <span class="screen__background__shape screen__background__shape4 "></span>
+                <span class="screen__background__shape screen__background__shape3 "></span>
+                <span class="screen__background__shape screen__background__shape2 "></span>
+                <span class="screen__background__shape screen__background__shape1 "></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

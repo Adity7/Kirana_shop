@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Kirana Shop</title>
+  <style>
+    /* Same styles as above */
+    body {
+      font-family: Arial;
+      background-color: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background-color: #222;
+      padding: 40px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 20px #ff6b81;
+    }
+    h2 {
+      text-align: center;
+      color: #ff6b81;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: white;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff6b81;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e05d72;
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .login-link a {
+      color: #ff6b81;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Login</h2>
+  <div id="error" class="error"></div>
+  <form id="loginForm">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required />
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  <div class="login-link">
+    New user? <a href="/signup">Create an account</a>
+  </div>
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

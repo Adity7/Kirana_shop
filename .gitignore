@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+.env
+npm-debug.log
+yarn-debug.log
+.DS_Store # Mac specific
+/coverage/
+# If you have any database files like SQLite:
+*.sqlite
+*.db
+# VS Code specific
+.vscode/
+
+# For compiled JavaScript files if you're transpiling
+/dist/
+/build/
